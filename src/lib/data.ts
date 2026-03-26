@@ -1,13 +1,14 @@
 export type NavItem = { label: string; href: string };
 
+/** Use `/#id` so section links work from any route (e.g. /privacy). */
 export const navItems: NavItem[] = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Work", href: "#work" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Process", href: "#process" },
-  { label: "Stories", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  { label: "Work", href: "/#work" },
+  { label: "Why Us", href: "/#why-us" },
+  { label: "Process", href: "/#process" },
+  { label: "Stories", href: "/#testimonials" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const trustLabels = [

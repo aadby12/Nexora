@@ -26,7 +26,7 @@ export function Portfolio() {
             />
           </div>
           <Reveal className="lg:pb-1">
-            <LinkButton href="#contact" variant="ghost" className="!px-0 !text-accent-cyan hover:!text-accent-cyan">
+            <LinkButton href="/#contact" variant="ghost" className="!px-0 !text-accent-cyan hover:!text-accent-cyan">
               Request full case studies →
             </LinkButton>
           </Reveal>
@@ -67,7 +67,7 @@ export function Portfolio() {
                   ))}
                 </div>
                 <div className="mt-8">
-                  <LinkButton href="#contact">Start a project like this</LinkButton>
+                  <LinkButton href="/#contact">Start a project like this</LinkButton>
                 </div>
               </div>
             </div>

@@ -58,7 +58,7 @@ export function ProjectCard({
         </ul>
         <div className="mt-6">
           <LinkButton
-            href="#contact"
+            href="/#contact"
             variant="secondary"
             className="w-full sm:w-auto !px-5 !text-xs"
           >

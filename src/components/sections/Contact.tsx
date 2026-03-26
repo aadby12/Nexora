@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import Link from "next/link";
 import { useActionState } from "react";
 import { submitContact } from "@/app/actions/contact";
 import { Reveal } from "@/components/motion/Reveal";
@@ -158,7 +159,14 @@ export function Contact() {
                   </Button>
                   <p className="text-xs text-muted">
                     Submissions are delivered securely. We only use your details
-                    to reply to this inquiry.
+                    to reply to this inquiry.{" "}
+                    <Link
+                      href="/privacy"
+                      className="text-foreground/80 underline-offset-4 hover:text-accent-mint hover:underline"
+                    >
+                      Privacy policy
+                    </Link>
+                    .
                   </p>
                 </form>
               )}

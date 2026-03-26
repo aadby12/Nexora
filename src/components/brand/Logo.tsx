@@ -16,7 +16,7 @@ type LogoProps = {
 export function Logo({
   className,
   variant = "header",
-  href = "#top",
+  href = "/",
   onClick,
   priority: _priority,
 }: LogoProps) {

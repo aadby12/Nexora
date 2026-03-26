@@ -8,7 +8,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-md space-y-4">
-            <Logo variant="footer" href="#top" />
+            <Logo variant="footer" href="/" />
             <p className="text-sm leading-relaxed text-muted">
               Next-level web experiences for teams who care how their brand
               feels in the browser—fast, immersive, and built to scale.
@@ -24,7 +24,7 @@ export function Footer() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-sm text-foreground/90 hover:text-accent-cyan"
+                      className="text-sm text-foreground/90 hover:text-accent-mint"
                     >
                       {item.label}
                     </Link>
@@ -32,8 +32,8 @@ export function Footer() {
                 ))}
                 <li>
                   <Link
-                    href="#faq"
-                    className="text-sm text-foreground/90 hover:text-accent-cyan"
+                    href="/#faq"
+                    className="text-sm text-foreground/90 hover:text-accent-mint"
                   >
                     FAQ
                   </Link>
@@ -51,7 +51,7 @@ export function Footer() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-foreground/90 hover:text-accent-cyan"
+                      className="text-sm text-foreground/90 hover:text-accent-mint"
                     >
                       {item.label}
                     </a>
@@ -67,7 +67,7 @@ export function Footer() {
                 <li>
                   <a
                     href="mailto:hello@nexora.studio"
-                    className="hover:text-accent-cyan"
+                    className="hover:text-accent-mint"
                   >
                     hello@nexora.studio
                   </a>
@@ -77,11 +77,22 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-8 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-muted sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Nexora. All rights reserved.</p>
-          <p className="text-balance sm:text-right">
-            Crafted for clarity, speed, and momentum.
-          </p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <Link
+              href="/privacy"
+              className="text-foreground/80 hover:text-accent-mint"
+            >
+              Privacy
+            </Link>
+            <span className="hidden text-white/20 sm:inline" aria-hidden>
+              ·
+            </span>
+            <p className="text-balance sm:text-right">
+              Crafted for clarity, speed, and momentum.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

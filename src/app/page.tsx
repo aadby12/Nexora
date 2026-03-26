@@ -1,4 +1,3 @@
-import { Footer } from "@/components/layout/Footer";
 import { About } from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
 import { CtaBanner } from "@/components/sections/CtaBanner";
@@ -27,7 +26,6 @@ export default function HomePage() {
       <FAQ />
       <CtaBanner />
       <Contact />
-      <Footer />
     </main>
   );
 }

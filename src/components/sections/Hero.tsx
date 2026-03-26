@@ -67,8 +67,8 @@ export function Hero() {
               ease: [0.22, 1, 0.36, 1],
             }}
           >
-            <LinkButton href="#work">View our work</LinkButton>
-            <LinkButton href="#contact" variant="secondary">
+            <LinkButton href="/#work">View our work</LinkButton>
+            <LinkButton href="/#contact" variant="secondary">
               Start a project
             </LinkButton>
           </motion.div>

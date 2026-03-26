@@ -9,7 +9,7 @@ import { Logo } from "@/components/brand/Logo";
 import { LinkButton } from "@/components/ui/Button";
 
 const sectionIds = navItems
-  .map((item) => item.href.replace("#", ""))
+  .map((item) => item.href.split("#").pop() ?? "")
   .filter(Boolean);
 
 export function Navbar() {
@@ -68,7 +68,7 @@ export function Navbar() {
           className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8"
           aria-label="Primary"
         >
-          <Logo href="#top" />
+          <Logo href="/" />
 
           <ul className="hidden items-center gap-1 lg:flex">
             {navItems.map((item) => {
@@ -106,7 +106,7 @@ export function Navbar() {
           </ul>
 
           <div className="hidden lg:block">
-            <LinkButton href="#contact" variant="secondary" className="!px-5">
+            <LinkButton href="/#contact" variant="secondary" className="!px-5">
               Start a project
             </LinkButton>
           </div>
@@ -178,7 +178,7 @@ export function Navbar() {
               aria-label="Mobile"
             >
               <div className="mb-6 border-b border-white/10 pb-5">
-                <Logo href="#top" onClick={() => setOpen(false)} />
+                <Logo href="/" onClick={() => setOpen(false)} />
               </div>
               <ul className="flex flex-col gap-1">
                 {navItems.map((item, i) => (
@@ -205,7 +205,7 @@ export function Navbar() {
               </ul>
               <div className="mt-6">
                 <Link
-                  href="#contact"
+                  href="/#contact"
                   onClick={() => setOpen(false)}
                   className="flex min-h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-accent-mint via-accent-azure to-accent-violet text-sm font-semibold text-white shadow-lg shadow-accent-azure/30"
                 >

@@ -31,8 +31,8 @@ export function CtaBanner() {
               </p>
             </div>
             <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-              <LinkButton href="#contact">Start a project</LinkButton>
-              <LinkButton href="#work" variant="secondary">
+              <LinkButton href="/#contact">Start a project</LinkButton>
+              <LinkButton href="/#work" variant="secondary">
                 View work
               </LinkButton>
             </div>

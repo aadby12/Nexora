@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { getSiteUrl } from "@/lib/site";
@@ -72,6 +73,7 @@ export default function RootLayout({
         <ScrollProgress />
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
