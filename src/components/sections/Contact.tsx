@@ -1,19 +1,15 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { FormEvent, useState } from "react";
+import { useActionState } from "react";
+import { submitContact } from "@/app/actions/contact";
 import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
 import { socialLinks } from "@/lib/data";
 
 export function Contact() {
-  const [status, setStatus] = useState<"idle" | "sent">("idle");
   const reduce = useReducedMotion();
-
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus("sent");
-  }
+  const [state, formAction, pending] = useActionState(submitContact, {});
 
   return (
     <section
@@ -24,7 +20,7 @@ export function Contact() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-start">
           <Reveal className="space-y-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent-cyan">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent-mint">
               Contact
             </p>
             <h2 className="font-display text-balance text-3xl font-medium tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem]">
@@ -40,7 +36,7 @@ export function Contact() {
                 <span className="text-foreground/90">Email: </span>
                 <a
                   href="mailto:hello@nexora.studio"
-                  className="text-accent-cyan underline-offset-4 hover:underline"
+                  className="text-accent-mint underline-offset-4 hover:underline"
                 >
                   hello@nexora.studio
                 </a>
@@ -66,7 +62,7 @@ export function Contact() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-medium text-muted underline-offset-4 hover:text-accent-cyan hover:underline"
+                    className="text-sm font-medium text-muted underline-offset-4 hover:text-accent-mint hover:underline"
                   >
                     {s.label}
                   </a>
@@ -77,13 +73,33 @@ export function Contact() {
 
           <Reveal delay={0.08}>
             <div className="glass-panel rounded-[1.35rem] border-white/[0.1] p-6 sm:p-8">
-              {status === "sent" ? (
+              {state.ok === true ? (
                 <p className="text-center text-sm text-foreground sm:text-base">
-                  Thank you. Your note is in our pipeline—we&apos;ll reply
-                  shortly with availability and a tailored recommendation.
+                  {state.message}
                 </p>
               ) : (
-                <form className="space-y-5" onSubmit={handleSubmit} noValidate>
+                <form className="relative space-y-5" action={formAction}>
+                  {state.error ? (
+                    <p
+                      role="alert"
+                      className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-200"
+                    >
+                      {state.error}
+                    </p>
+                  ) : null}
+
+                  <div className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden">
+                    <label htmlFor="contact-company">Company</label>
+                    <input
+                      id="contact-company"
+                      name="company"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                    />
+                  </div>
+
                   <div>
                     <label
                       htmlFor="name"
@@ -97,7 +113,8 @@ export function Contact() {
                       type="text"
                       required
                       autoComplete="name"
-                      className="mt-2 w-full rounded-xl border border-white/10 bg-black/25 px-4 py-3 text-sm text-foreground outline-none ring-0 transition placeholder:text-muted/60 focus:border-accent-cyan/50"
+                      disabled={pending}
+                      className="mt-2 w-full rounded-xl border border-white/10 bg-black/25 px-4 py-3 text-sm text-foreground outline-none ring-0 transition placeholder:text-muted/60 focus:border-accent-mint/50 disabled:opacity-50"
                       placeholder="Your name"
                     />
                   </div>
@@ -114,7 +131,8 @@ export function Contact() {
                       type="email"
                       required
                       autoComplete="email"
-                      className="mt-2 w-full rounded-xl border border-white/10 bg-black/25 px-4 py-3 text-sm text-foreground outline-none transition placeholder:text-muted/60 focus:border-accent-cyan/50"
+                      disabled={pending}
+                      className="mt-2 w-full rounded-xl border border-white/10 bg-black/25 px-4 py-3 text-sm text-foreground outline-none transition placeholder:text-muted/60 focus:border-accent-mint/50 disabled:opacity-50"
                       placeholder="you@company.com"
                     />
                   </div>
@@ -130,16 +148,17 @@ export function Contact() {
                       name="message"
                       required
                       rows={4}
-                      className="mt-2 w-full resize-y rounded-xl border border-white/10 bg-black/25 px-4 py-3 text-sm text-foreground outline-none transition placeholder:text-muted/60 focus:border-accent-cyan/50"
+                      disabled={pending}
+                      className="mt-2 w-full resize-y rounded-xl border border-white/10 bg-black/25 px-4 py-3 text-sm text-foreground outline-none transition placeholder:text-muted/60 focus:border-accent-mint/50 disabled:opacity-50"
                       placeholder="Goals, timeline, links, and anything we should know."
                     />
                   </div>
-                  <Button type="submit" className="w-full sm:w-auto">
-                    Send message
+                  <Button type="submit" className="w-full sm:w-auto" disabled={pending}>
+                    {pending ? "Sending…" : "Send message"}
                   </Button>
                   <p className="text-xs text-muted">
-                    This demo form confirms UX only—wire your API route or form
-                    backend when you deploy.
+                    Submissions are delivered securely. We only use your details
+                    to reply to this inquiry.
                   </p>
                 </form>
               )}

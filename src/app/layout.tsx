@@ -25,6 +25,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: getSiteUrl(),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Nexora · Future-Ready Digital Experiences",
     template: "%s · Nexora",

@@ -1,15 +1,19 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  type HTMLMotionProps,
+} from "framer-motion";
 import { cn } from "@/lib/utils";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
 
-/** motion.button props + explicit children so TS matches JSX (motion children allow MotionValue). */
-export type ButtonProps = Omit<
-  React.ComponentProps<typeof motion.button>,
-  "children"
-> & {
+/**
+ * Framer’s HTMLMotionProps omits DOM keys that collide with Motion (e.g. `onDrag`).
+ * Avoid `ComponentProps<typeof motion.button>` — it can widen back to React’s button types on some TS versions.
+ */
+export type ButtonProps = Omit<HTMLMotionProps<"button">, "children"> & {
   variant?: ButtonVariant;
   children?: React.ReactNode;
 };
