@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { getSiteUrl } from "@/lib/site";
 import { Analytics } from "@vercel/analytics/react";
+import { StructuredData } from "@/components/seo/StructuredData";
 import "./globals.css";
 
 const inter = Inter({
@@ -73,6 +74,7 @@ export default function RootLayout({
       <body className="min-h-full bg-background font-sans text-foreground">
         <ScrollProgress />
         <Navbar />
+        <StructuredData />
         {children}
         <Footer />
         <Analytics />
