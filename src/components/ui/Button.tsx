@@ -5,9 +5,13 @@ import { cn } from "@/lib/utils";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
 
-export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+/** motion.button props + explicit children so TS matches JSX (motion children allow MotionValue). */
+export type ButtonProps = Omit<
+  React.ComponentProps<typeof motion.button>,
+  "children"
+> & {
   variant?: ButtonVariant;
-  asChild?: false;
+  children?: React.ReactNode;
 };
 
 const variants: Record<ButtonVariant, string> = {
