@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export const alt = "Nexora — Next-level web experiences";
+export const alt = "Avenor Tech - Premium web development agency";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -33,7 +33,7 @@ export default function OpenGraphImage() {
               height: 72,
               borderRadius: 18,
               background:
-                "linear-gradient(135deg, #4ade80 0%, #3b82f6 45%, #8b5cf6 100%)",
+                "linear-gradient(135deg, #22d3ee 0%, #3b82f6 45%, #8b5cf6 100%)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -44,7 +44,7 @@ export default function OpenGraphImage() {
                 "ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
             }}
           >
-            N
+            A
           </div>
           <span
             style={{
@@ -56,7 +56,7 @@ export default function OpenGraphImage() {
                 "ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
             }}
           >
-            Nexora
+            Avenor Tech
           </span>
         </div>
 
@@ -73,7 +73,7 @@ export default function OpenGraphImage() {
                 "ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
             }}
           >
-            Future-ready digital experiences
+            Futuristic high-performance websites
           </div>
           <div
             style={{
@@ -86,8 +86,8 @@ export default function OpenGraphImage() {
                 "ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
             }}
           >
-            High-performance websites & apps—premium UI, mobile-first, built to
-            scale.
+            Premium web development for businesses that want modern design,
+            stronger trust, and better conversions.
           </div>
         </div>
 
@@ -108,10 +108,10 @@ export default function OpenGraphImage() {
               height: 10,
               borderRadius: 999,
               background:
-                "linear-gradient(135deg, #4ade80, #3b82f6, #8b5cf6)",
+                "linear-gradient(135deg, #22d3ee, #3b82f6, #8b5cf6)",
             }}
           />
-          nexora.studio · Next.js · TypeScript · Motion
+          avenortech12.com · Next.js · TypeScript · Supabase
         </div>
       </div>
     ),

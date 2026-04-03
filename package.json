@@ -1,15 +1,18 @@
 {
-  "name": "nexora",
+  "name": "avenor-tech",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
+    "dev:turbo": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "favicons": "node scripts/optimize-favicons.mjs"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.10.0",
+    "@supabase/supabase-js": "^2.100.1",
     "@vercel/analytics": "^2.0.1",
     "framer-motion": "^12.6.2",
     "next": "16.2.1",

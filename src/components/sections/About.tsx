@@ -1,41 +1,43 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { type SiteSettings } from "@/lib/data";
 
-export function About() {
+export function About({ about }: { about: SiteSettings["about"] }) {
   return (
     <section
       id="about"
-      className="scroll-mt-28 py-20 sm:scroll-mt-32 sm:py-24 lg:py-28"
+      className="section-shell section-divider scroll-mt-28 py-22 sm:scroll-mt-32 sm:py-26 lg:py-32"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
+        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-18 lg:items-start">
           <SectionHeading
-            eyebrow="About Nexora"
-            title="We create next-generation digital experiences—not just web pages."
-            description="Nexora is a focused web development studio for brands that want clarity, speed, and craft. We believe digital should feel intelligent: calm interfaces, decisive motion, and performance you can measure."
+            eyebrow={about.eyebrow}
+            title={about.title}
+            description={about.description}
           />
-          <Reveal className="space-y-6 text-base leading-relaxed text-muted sm:text-lg">
-            <p>
-              Our work sits at the intersection of product thinking and visual
-              design. We partner with businesses, startups, and founders to
-              translate complex stories into interfaces people understand
-              instantly—and remember long after they leave.
-            </p>
-            <p>
-              From strategy to launch, we obsess over the details that compound:
-              typography rhythm, resilient components, accessibility, and the
-              invisible polish that makes a site feel{" "}
-              <span className="text-foreground">alive</span>.
-            </p>
-            <div className="rounded-2xl border border-accent-indigo/25 bg-gradient-to-br from-accent-indigo/10 to-transparent p-5 sm:p-6">
-              <p className="font-display text-lg font-medium text-foreground">
-                Building the future, digitally.
-              </p>
-              <p className="mt-2 text-sm text-muted">
-                That is the standard behind every engagement—future-ready code,
-                timeless visual language, and partnerships that outlast the
-                launch week.
-              </p>
+          <Reveal className="space-y-8">
+            <div className="space-y-5 text-base leading-8 text-muted sm:text-[1.03rem]">
+              {about.body.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="rounded-[1.35rem] border border-white/10 bg-white/[0.03] p-5">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-accent-cyan">
+                  What that means
+                </p>
+                <p className="mt-3 text-sm leading-7 text-foreground/84">
+                  Visitors understand the offer faster and leave with a better impression of the brand.
+                </p>
+              </div>
+              <div className="rounded-[1.35rem] border border-white/10 bg-white/[0.03] p-5">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-accent-cyan">
+                  Why it matters
+                </p>
+                <p className="mt-3 text-sm leading-7 text-foreground/84">
+                  A stronger website helps the business feel more credible before a conversation even starts.
+                </p>
+              </div>
             </div>
           </Reveal>
         </div>

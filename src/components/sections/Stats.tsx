@@ -48,26 +48,26 @@ function StatItem({
   const display = useCountUp(value, inView);
 
   return (
-    <div ref={ref} className="glass-panel rounded-2xl p-5 sm:p-6">
-      <p className="font-display text-3xl font-semibold tabular-nums tracking-tight text-foreground sm:text-4xl">
+    <div ref={ref} className="glass-panel premium-border rounded-[1.5rem] p-5 sm:p-6">
+      <p className="font-display text-3xl font-semibold tabular-nums tracking-[-0.04em] text-foreground sm:text-[2.7rem]">
         {display}
         {suffix}
       </p>
-      <p className="mt-2 text-sm text-muted">{label}</p>
+      <p className="mt-2 text-sm leading-6 text-muted">{label}</p>
     </div>
   );
 }
 
 export function Stats() {
   return (
-    <section className="relative border-y border-white/[0.06] bg-white/[0.02] py-12 sm:py-16">
+    <section className="section-divider relative border-y border-white/[0.06] bg-white/[0.02] py-14 sm:py-18">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal className="mb-8 max-w-xl">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent-cyan">
-            Traction
+            Advantage
           </p>
           <h2 className="mt-2 font-display text-2xl font-medium text-foreground sm:text-3xl">
-            Built for teams that ship
+            Built for premium growth
           </h2>
         </Reveal>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

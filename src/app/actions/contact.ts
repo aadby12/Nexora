@@ -1,6 +1,8 @@
 "use server";
 
 import { Resend } from "resend";
+import { isSupabaseConfigured } from "@/lib/content";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 export type ContactFormState = {
   ok?: boolean;
@@ -12,25 +14,60 @@ function isValidEmail(value: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
+async function notifyByEmail({
+  name,
+  email,
+  phone,
+  company,
+  message,
+}: {
+  name: string;
+  email: string;
+  phone: string;
+  company: string;
+  message: string;
+}) {
+  const apiKey = process.env.RESEND_API_KEY;
+  const to = process.env.CONTACT_TO_EMAIL;
+  const from =
+    process.env.CONTACT_FROM_EMAIL ?? "Avenor Tech <onboarding@resend.dev>";
+
+  if (!apiKey || !to) {
+    return;
+  }
+
+  const resend = new Resend(apiKey);
+
+  await resend.emails.send({
+    from,
+    to: [to],
+    replyTo: email,
+    subject: `[Avenor Tech] New inquiry from ${name}`,
+    text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\n\n${message}`,
+  });
+}
+
 export async function submitContact(
   _prev: ContactFormState,
   formData: FormData,
 ): Promise<ContactFormState> {
-  const honeypot = String(formData.get("company") ?? "").trim();
+  const honeypot = String(formData.get("website") ?? "").trim();
   if (honeypot.length > 0) {
     return {
       ok: true,
-      message: "Thanks — we’ll be in touch.",
+      message: "Thanks. Your inquiry has been received.",
     };
   }
 
   const name = String(formData.get("name") ?? "").trim();
   const email = String(formData.get("email") ?? "").trim();
+  const phone = String(formData.get("phone") ?? "").trim();
+  const company = String(formData.get("client_company") ?? "").trim();
   const message = String(formData.get("message") ?? "").trim();
 
   if (!name || name.length > 120) {
     return {
-      error: "Please enter your name (max 120 characters).",
+      error: "Please enter your name.",
     };
   }
 
@@ -40,9 +77,9 @@ export async function submitContact(
     };
   }
 
-  if (message.length < 10) {
+  if (message.length < 20) {
     return {
-      error: "Please add a bit more detail (at least 10 characters).",
+      error: "Please share a bit more detail about your project.",
     };
   }
 
@@ -52,39 +89,34 @@ export async function submitContact(
     };
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO_EMAIL;
-  const from =
-    process.env.CONTACT_FROM_EMAIL ?? "Nexora <onboarding@resend.dev>";
+  try {
+    if (isSupabaseConfigured()) {
+      const supabase = await createServerSupabaseClient();
+      const { error } = await supabase.from("contact_submissions").insert({
+        name,
+        email,
+        phone,
+        company,
+        message,
+      });
 
-  if (!apiKey || !to) {
+      if (error) {
+        throw error;
+      }
+    }
+
+    await notifyByEmail({ name, email, phone, company, message });
+
+    return {
+      ok: true,
+      message:
+        "Thank you. Your message has been sent and stored successfully. We’ll get back to you soon.",
+    };
+  } catch (error) {
+    console.error("[contact]", error);
     return {
       error:
-        "This form isn’t configured for email yet. Please use hello@nexora.studio or WhatsApp.",
+        "We could not send your inquiry right now. Please email info@avenortech12.com or message WhatsApp.",
     };
-  }
-
-  const resend = new Resend(apiKey);
-
-  const { error } = await resend.emails.send({
-    from,
-    to: [to],
-    replyTo: email,
-    subject: `[Nexora] Message from ${name}`,
-    text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
-  });
-
-  if (error) {
-    console.error("[contact] Resend:", error);
-    return {
-      error:
-        "Could not send right now. Please try again or email hello@nexora.studio.",
-    };
-  }
-
-  return {
-    ok: true,
-    message:
-      "Thank you — your message was sent. We’ll reply within one business day.",
   };
 }

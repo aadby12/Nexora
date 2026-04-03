@@ -3,20 +3,23 @@ import { socialLinks } from "@/lib/data";
 
 export function StructuredData() {
   const siteUrl = getSiteUrl().toString().replace(/\/$/, "");
-  const logo = `${siteUrl}/icon.png`;
+  const logo = `${siteUrl}/brand-logo-transparent.png`;
 
   const graph = [
     {
       "@type": "Organization",
-      name: "Nexora",
+      name: "Avenor Tech",
       url: siteUrl,
       logo,
-      email: "hello@nexora.studio",
+      email: "info@avenortech12.com",
+      telephone: "+233541111423",
+      areaServed: "Ghana",
       contactPoint: [
         {
           "@type": "ContactPoint",
           contactType: "sales",
-          email: "hello@nexora.studio",
+          email: "info@avenortech12.com",
+          telephone: "+233541111423",
           availableLanguage: ["en"],
         },
       ],
@@ -24,7 +27,7 @@ export function StructuredData() {
     },
     {
       "@type": "WebSite",
-      name: "Nexora",
+      name: "Avenor Tech",
       url: siteUrl,
       inLanguage: "en",
     },

@@ -60,17 +60,17 @@ export function Navbar() {
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-all duration-300",
           scrolled
-            ? "border-b border-white/[0.08] bg-background/75 backdrop-blur-xl"
+            ? "border-b border-white/[0.08] bg-background/78 shadow-[0_18px_60px_-38px_rgba(15,23,42,0.9)] backdrop-blur-2xl"
             : "border-b border-transparent bg-transparent",
         )}
       >
         <nav
-          className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8"
+          className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6 lg:px-8"
           aria-label="Primary"
         >
           <Logo href="/" />
 
-          <ul className="hidden items-center gap-1 lg:flex">
+          <ul className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.035] p-1 lg:flex">
             {navItems.map((item) => {
               const id = item.href.replace("#", "");
               const isActive = active === id;
@@ -79,7 +79,7 @@ export function Navbar() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "rounded-full px-3 py-2 text-sm font-medium transition-colors",
+                      "rounded-full px-4 py-2 text-sm font-medium transition-colors",
                       isActive
                         ? "text-foreground"
                         : "text-muted hover:text-foreground",
@@ -90,7 +90,7 @@ export function Navbar() {
                       {isActive ? (
                         <motion.span
                           layoutId="nav-pill"
-                          className="absolute -inset-x-1 -inset-y-0.5 -z-10 rounded-full bg-white/[0.07] ring-1 ring-white/10"
+                          className="absolute -inset-x-1 -inset-y-0.5 -z-10 rounded-full bg-white/[0.08] ring-1 ring-white/10"
                           transition={{
                             type: "spring",
                             stiffness: 380,
@@ -107,13 +107,13 @@ export function Navbar() {
 
           <div className="hidden lg:block">
             <LinkButton href="/#contact" variant="secondary" className="!px-5">
-              Start a project
+              Start Project
             </LinkButton>
           </div>
 
           <button
             type="button"
-            className="relative z-[70] flex h-11 w-11 touch-manipulation items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] lg:hidden"
+            className="relative z-[70] flex h-11 w-11 touch-manipulation items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] shadow-[0_14px_32px_-26px_rgba(56,189,248,0.26)] lg:hidden"
             onClick={() => setOpen((o) => !o)}
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -174,7 +174,7 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 280, damping: 34 }}
-              className="absolute right-0 top-0 flex h-full w-[min(100%,20rem)] flex-col border-l border-white/10 bg-[#070b18]/95 px-5 pb-10 pt-24 shadow-[-16px_0_48px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
+              className="absolute right-0 top-0 flex h-full w-[min(100%,21rem)] flex-col border-l border-white/10 bg-[#070b18]/96 px-5 pb-10 pt-24 shadow-[-16px_0_48px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
               aria-label="Mobile"
             >
               <div className="mb-6 border-b border-white/10 pb-5">
@@ -196,7 +196,7 @@ export function Navbar() {
                     <Link
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="block rounded-xl px-3 py-3 text-base font-medium text-foreground hover:bg-white/[0.06]"
+                    className="block rounded-2xl px-4 py-3.5 text-base font-medium text-foreground transition-colors hover:bg-white/[0.05]"
                     >
                       {item.label}
                     </Link>
@@ -207,9 +207,9 @@ export function Navbar() {
                 <Link
                   href="/#contact"
                   onClick={() => setOpen(false)}
-                  className="flex min-h-12 w-full items-center justify-center rounded-full bg-gradient-to-r from-accent-mint via-accent-azure to-accent-violet text-sm font-semibold text-white shadow-lg shadow-accent-azure/30"
+                  className="flex min-h-12 w-full items-center justify-center rounded-full bg-[linear-gradient(135deg,#22c7b7_0%,#2787ef_58%,#5b63f3_100%)] text-sm font-semibold text-white shadow-lg shadow-accent-azure/20"
                 >
-                  Start a project
+                  Start Project
                 </Link>
               </div>
             </motion.nav>

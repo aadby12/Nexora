@@ -6,26 +6,36 @@ import { Hero } from "@/components/sections/Hero";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { Process } from "@/components/sections/Process";
 import { Services } from "@/components/sections/Services";
-import { Stats } from "@/components/sections/Stats";
 import { TechStack } from "@/components/sections/TechStack";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
+import { getHomePageData } from "@/lib/content";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const data = await getHomePageData();
+
   return (
     <main>
-      <Hero />
-      <Stats />
-      <About />
-      <Services />
-      <Portfolio />
-      <WhyChooseUs />
-      <Process />
+      <Hero hero={data.settings.hero} />
+      <About about={data.settings.about} />
+      <Services services={data.services} />
+      <Portfolio projects={data.projects} />
+      <WhyChooseUs
+        settings={data.settings.whyChooseUs}
+        whyPoints={data.whyPoints}
+      />
+      <Process
+        settings={data.settings.process}
+        processSteps={data.processSteps}
+      />
       <TechStack />
-      <Testimonials />
+      <Testimonials
+        settings={data.settings.testimonials}
+        testimonials={data.testimonials}
+      />
       <FAQ />
       <CtaBanner />
-      <Contact />
+      <Contact contact={data.settings.contact} />
     </main>
   );
 }

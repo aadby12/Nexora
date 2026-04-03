@@ -4,14 +4,14 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How Nexora collects, uses, and protects personal information when you use our website or contact form.",
+    "How Avenor Tech collects, uses, and protects personal information when you use the website, admin panel, or contact form.",
   alternates: {
     canonical: "/privacy",
   },
   openGraph: {
-    title: "Privacy Policy · Nexora",
+    title: "Privacy Policy · Avenor Tech",
     description:
-      "How Nexora handles data from visitors and contact form submissions.",
+      "How Avenor Tech handles data from visitors and contact form submissions.",
   },
 };
 
@@ -35,9 +35,10 @@ export default function PrivacyPage() {
               Who we are
             </h2>
             <p>
-              Nexora (“we”, “us”) operates this website to present our web
-              development services. This policy explains what we collect when
-              you browse or get in touch, and how we use it.
+              Avenor Tech (“we”, “us”) operates this website to present our web
+              development services and manage customer inquiries. This policy
+              explains what we collect when you browse or get in touch, and how
+              we use it.
             </p>
           </section>
 
@@ -127,10 +128,10 @@ export default function PrivacyPage() {
             <p>
               You may contact us at{" "}
               <a
-                href="mailto:hello@nexora.studio"
+                href="mailto:info@avenortech12.com"
                 className="text-accent-mint underline-offset-4 hover:underline"
               >
-                hello@nexora.studio
+                info@avenortech12.com
               </a>{" "}
               to ask about data we hold about you, to correct inaccuracies, or to
               request deletion where applicable. We will respond within a

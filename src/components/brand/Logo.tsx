@@ -22,34 +22,25 @@ export function Logo({
 }: LogoProps) {
   const isFooter = variant === "footer";
   const markSize = isFooter
-    ? "h-9 w-9 sm:h-10 sm:w-10"
-    : "h-8 w-8 sm:h-9 sm:w-9";
+    ? "h-8 w-8 sm:h-9 sm:w-9"
+    : "h-7 w-7 sm:h-8 sm:w-8";
   const textSize = isFooter
     ? "text-xl font-semibold sm:text-2xl"
-    : "text-lg font-semibold sm:text-xl";
+    : "text-lg font-semibold sm:text-[1.15rem]";
 
   const inner = (
     <>
-      <span
-        className={cn(
-          "flex items-center justify-center rounded-xl bg-white/[0.04] ring-1 ring-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]",
-          isFooter ? "p-2 sm:p-2.5" : "p-1.5 sm:p-2",
-        )}
-      >
+      <span className="flex shrink-0 items-center justify-center">
         <NexoraMark className={markSize} />
       </span>
       <span
         className={cn(
-          "font-display tracking-tight text-foreground",
+          "font-display leading-none tracking-[-0.035em] text-foreground",
           textSize,
         )}
       >
-        Nexora
+        Avenor Tech
       </span>
-      <span
-        className="h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-br from-accent-mint via-accent-azure to-accent-violet opacity-90 shadow-[0_0_10px_-2px_rgba(74,222,128,0.5)] transition group-hover:opacity-100 sm:h-2 sm:w-2"
-        aria-hidden
-      />
     </>
   );
 

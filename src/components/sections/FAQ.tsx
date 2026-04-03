@@ -11,30 +11,30 @@ export function FAQ() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="faq" className="scroll-mt-28 py-20 sm:scroll-mt-32 sm:py-24 lg:py-28">
+    <section id="faq" className="section-shell section-divider scroll-mt-28 py-22 sm:scroll-mt-32 sm:py-26 lg:py-32">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           align="center"
           eyebrow="FAQ"
-          title="Answers before we ever meet."
-          description="Straightforward details help you decide faster. Reach out if you need something bespoke covered."
+          title="A few practical questions, answered clearly."
+          description="The essentials are here. If your project is more specific, that conversation can happen directly."
         />
 
-        <div className="mt-12 space-y-3">
+        <div className="mt-12 space-y-4">
           {faqItems.map((item, i) => {
             const isOpen = openId === i;
             return (
               <Reveal key={item.q} delay={i * 0.05}>
-                <div className="overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03]">
+                <div className="premium-border overflow-hidden rounded-[1.4rem] border border-white/[0.08] bg-white/[0.03]">
                   <button
                     type="button"
                     id={`faq-${i}-button`}
                     aria-expanded={isOpen}
                     aria-controls={`faq-${i}-panel`}
                     onClick={() => setOpenId(isOpen ? null : i)}
-                    className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5"
+                    className="flex w-full items-center justify-between gap-4 px-5 py-4.5 text-left sm:px-6 sm:py-5.5"
                   >
-                    <span className="font-display text-base font-medium text-foreground sm:text-lg">
+                    <span className="font-display text-base font-medium tracking-[-0.02em] text-foreground sm:text-lg">
                       {item.q}
                     </span>
                     <motion.span
@@ -65,7 +65,7 @@ export function FAQ() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: reduce ? 0 : 0.28, ease: [0.22, 1, 0.36, 1] }}
                       >
-                        <p className="border-t border-white/[0.06] px-5 pb-5 pt-3 text-sm leading-relaxed text-muted sm:px-6 sm:pb-6">
+                        <p className="border-t border-white/[0.06] px-5 pb-5 pt-3 text-sm leading-7 text-muted sm:px-6 sm:pb-6">
                           {item.a}
                         </p>
                       </motion.div>

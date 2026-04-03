@@ -1,22 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  /* Deep navy aligned with official Nexora mark */
-  --background: #050a18;
-  --foreground: #f4f7ff;
-  --muted: #94a3b8;
-  /* Brand spectrum: mint → azure → violet (logo ribbons) */
-  --accent-mint: #4ade80;
+  --background: #060816;
+  --foreground: #f8fbff;
+  --muted: #98a8c2;
+  --surface: rgba(9, 14, 30, 0.72);
+  --surface-soft: rgba(255, 255, 255, 0.05);
+  --card-light: #f6f8fc;
+  --card-light-foreground: #0c1224;
+  --border-glass: rgba(159, 176, 200, 0.14);
+  --accent-mint: #2dd4bf;
   --accent-azure: #3b82f6;
-  --accent-sky: #60a5fa;
-  --accent-cyan: #60a5fa;
-  --accent-indigo: #4f46e5;
+  --accent-sky: #38bdf8;
+  --accent-cyan: #22d3ee;
+  --accent-indigo: #6366f1;
   --accent-violet: #8b5cf6;
-  --surface: rgba(15, 23, 42, 0.65);
-  --border-glass: rgba(148, 163, 184, 0.12);
-  --glow-mint: rgba(74, 222, 128, 0.28);
-  --glow-azure: rgba(59, 130, 246, 0.22);
-  --glow-violet: rgba(139, 92, 246, 0.25);
+  --accent-green: #22c55e;
+  --glow-mint: rgba(34, 197, 94, 0.14);
+  --glow-azure: rgba(56, 189, 248, 0.14);
+  --glow-violet: rgba(139, 92, 246, 0.16);
+  --section-light: linear-gradient(180deg, #ffffff 0%, #f3f7ff 100%);
 }
 
 @theme inline {
@@ -29,7 +32,8 @@
   --color-accent-cyan: var(--accent-cyan);
   --color-accent-indigo: var(--accent-indigo);
   --color-accent-violet: var(--accent-violet);
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --color-accent-green: var(--accent-green);
+  --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui,
     sans-serif;
   --background-image-grid-fine: linear-gradient(
@@ -51,9 +55,12 @@
   }
 
   body {
-    background-color: var(--background);
+    background:
+      radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 26%),
+      radial-gradient(circle at top right, rgba(139, 92, 246, 0.1), transparent 26%),
+      linear-gradient(180deg, #060816 0%, #070b1b 48%, #050712 100%);
     color: var(--foreground);
-    font-family: var(--font-inter), system-ui, sans-serif;
+    font-family: var(--font-instrument-sans), system-ui, sans-serif;
   }
 
   ::selection {
@@ -75,12 +82,60 @@
   .glass-panel {
     background: linear-gradient(
       145deg,
-      rgba(15, 23, 42, 0.78),
-      rgba(15, 23, 42, 0.42)
+      rgba(11, 18, 37, 0.8),
+      rgba(11, 18, 37, 0.58)
     );
     border: 1px solid var(--border-glass);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+  }
+
+  .light-panel {
+    background: var(--section-light);
+    color: var(--card-light-foreground);
+    border: 1px solid rgba(12, 18, 36, 0.06);
+    box-shadow: 0 24px 80px -48px rgba(15, 23, 42, 0.35);
+  }
+
+  .premium-border {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 20px 60px -46px rgba(59, 130, 246, 0.16);
+  }
+
+  .section-divider {
+    position: relative;
+  }
+
+  .section-divider::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: min(180px, 32vw);
+    height: 1px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+  }
+
+  .section-shell {
+    position: relative;
+  }
+
+  .section-shell::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(34, 211, 238, 0.05), transparent 16%),
+      radial-gradient(circle at 80% 10%, rgba(139, 92, 246, 0.05), transparent 18%);
   }
 
   .bg-grid-fine {
@@ -90,5 +145,10 @@
 
   .font-display {
     font-family: var(--font-display);
+  }
+
+  /* Project thumbnails & gallery: full image visible, letterbox if aspect differs */
+  .portfolio-image-slot {
+    background-color: #050812;
   }
 }

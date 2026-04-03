@@ -5,13 +5,12 @@ import { navItems, socialLinks } from "@/lib/data";
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#040714]">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
-          <div className="max-w-md space-y-4">
+          <div className="max-w-md space-y-5">
             <Logo variant="footer" href="/" />
-            <p className="text-sm leading-relaxed text-muted">
-              Next-level web experiences for teams who care how their brand
-              feels in the browser—fast, immersive, and built to scale.
+            <p className="text-sm leading-7 text-muted">
+              Website design and development for businesses that want to look more established online and communicate more clearly.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">
@@ -24,7 +23,7 @@ export function Footer() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-sm text-foreground/90 hover:text-accent-mint"
+                      className="text-sm text-foreground/90 transition hover:text-accent-mint"
                     >
                       {item.label}
                     </Link>
@@ -33,7 +32,7 @@ export function Footer() {
                 <li>
                   <Link
                     href="/#faq"
-                    className="text-sm text-foreground/90 hover:text-accent-mint"
+                    className="text-sm text-foreground/90 transition hover:text-accent-mint"
                   >
                     FAQ
                   </Link>
@@ -51,7 +50,7 @@ export function Footer() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-foreground/90 hover:text-accent-mint"
+                      className="text-sm text-foreground/90 transition hover:text-accent-mint"
                     >
                       {item.label}
                     </a>
@@ -66,19 +65,20 @@ export function Footer() {
               <ul className="mt-4 space-y-2 text-sm text-foreground/90">
                 <li>
                   <a
-                    href="mailto:hello@nexora.studio"
-                    className="hover:text-accent-mint"
+                    href="mailto:info@avenortech12.com"
+                    className="transition hover:text-accent-mint"
                   >
-                    hello@nexora.studio
+                    info@avenortech12.com
                   </a>
                 </li>
-                <li className="text-muted">San Francisco · Remote worldwide</li>
+                <li className="text-muted">0538730683</li>
+                <li className="text-muted">+233541111423</li>
               </ul>
             </div>
           </div>
         </div>
         <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-muted sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Nexora. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Avenor Tech. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <Link
               href="/privacy"
@@ -90,7 +90,7 @@ export function Footer() {
               ·
             </span>
             <p className="text-balance sm:text-right">
-              Crafted for clarity, speed, and momentum.
+              Designed to feel clear, credible, and current.
             </p>
           </div>
         </div>
