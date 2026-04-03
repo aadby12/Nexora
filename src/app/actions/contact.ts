@@ -3,6 +3,7 @@
 import { Resend } from "resend";
 import { isSupabaseConfigured } from "@/lib/content";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { SITE_DISPLAY_NAME } from "@/lib/site";
 
 export type ContactFormState = {
   ok?: boolean;
@@ -12,6 +13,24 @@ export type ContactFormState = {
 
 function isValidEmail(value: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+/** Resend `from`: keep the configured address but always use the live site brand as the display name. */
+function contactFromHeader(raw?: string): string {
+  const fallback = `onboarding@resend.dev`;
+  const trimmed = raw?.trim();
+  if (!trimmed) {
+    return `${SITE_DISPLAY_NAME} <${fallback}>`;
+  }
+  const bracket = trimmed.match(/^\s*[^<]*<\s*([^>]+)\s*>\s*$/);
+  if (bracket) {
+    const addr = bracket[1].trim();
+    return `${SITE_DISPLAY_NAME} <${addr}>`;
+  }
+  if (isValidEmail(trimmed)) {
+    return `${SITE_DISPLAY_NAME} <${trimmed}>`;
+  }
+  return trimmed;
 }
 
 async function notifyByEmail({
@@ -29,8 +48,7 @@ async function notifyByEmail({
 }) {
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO_EMAIL;
-  const from =
-    process.env.CONTACT_FROM_EMAIL ?? "Avenor Tech <onboarding@resend.dev>";
+  const from = contactFromHeader(process.env.CONTACT_FROM_EMAIL);
 
   if (!apiKey || !to) {
     return;
@@ -42,7 +60,7 @@ async function notifyByEmail({
     from,
     to: [to],
     replyTo: email,
-    subject: `[Avenor Tech] New inquiry from ${name}`,
+    subject: `[${SITE_DISPLAY_NAME}] New inquiry from ${name}`,
     text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\n\n${message}`,
   });
 }

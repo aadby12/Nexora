@@ -1,3 +1,6 @@
+/** Public-facing brand name (emails, subjects, must match site copy). */
+export const SITE_DISPLAY_NAME = "Avenor Tech";
+
 /**
  * Canonical origin for metadata (Open Graph, canonical URLs, etc.).
  * Vercel: set NEXT_PUBLIC_SITE_URL to your production domain in Project → Settings → Environment Variables.
