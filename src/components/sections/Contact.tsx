@@ -16,9 +16,9 @@ export function Contact({ contact }: { contact: SiteSettings["contact"] }) {
   return (
     <section
       id="contact"
-      className="section-shell relative scroll-mt-28 overflow-hidden py-22 sm:scroll-mt-32 sm:py-26 lg:py-32"
+      className="section-shell relative scroll-mt-24 overflow-hidden py-16 sm:scroll-mt-28 sm:py-20 lg:py-24"
     >
-      <div className="absolute inset-0 bg-gradient-to-t from-accent-indigo/[0.08] via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-accent-azure/[0.08] via-transparent to-transparent" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-18 lg:items-start">
           <Reveal className="space-y-6">
@@ -32,7 +32,7 @@ export function Contact({ contact }: { contact: SiteSettings["contact"] }) {
               {contact.body}
             </p>
             <div className="grid gap-3 sm:grid-cols-2">
-              <div className="rounded-[1.35rem] border border-white/10 bg-white/[0.04] p-4 text-sm text-muted">
+              <div className="rounded-[1.35rem] border border-slate-300/45 bg-white/74 p-4 text-sm text-muted">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-cyan">
                   Phone
                 </p>
@@ -45,7 +45,7 @@ export function Contact({ contact }: { contact: SiteSettings["contact"] }) {
                   </a>
                 </p>
               </div>
-              <div className="rounded-[1.35rem] border border-white/10 bg-white/[0.04] p-4 text-sm text-muted">
+              <div className="rounded-[1.35rem] border border-slate-300/45 bg-white/74 p-4 text-sm text-muted">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-cyan">
                   Email
                 </p>
@@ -68,7 +68,7 @@ export function Contact({ contact }: { contact: SiteSettings["contact"] }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={reduce ? undefined : { x: 4 }}
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-5 py-3 text-foreground shadow-[0_14px_30px_-24px_rgba(34,197,94,0.26)]"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-300/45 bg-white/80 px-5 py-3 text-foreground shadow-[0_14px_30px_-24px_rgba(46,157,115,0.22)]"
               >
                 <span
                   className="h-2 w-2 rounded-full bg-emerald-400"
@@ -94,7 +94,7 @@ export function Contact({ contact }: { contact: SiteSettings["contact"] }) {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <div className="glass-panel premium-border rounded-[1.5rem] border-white/[0.1] p-6 sm:p-8">
+            <div className="glass-panel premium-border rounded-[1.5rem] border-slate-300/45 p-6 sm:p-8">
               {state.ok === true ? (
                 <p className="text-center text-sm text-foreground sm:text-base">
                   {state.message}
@@ -136,7 +136,7 @@ export function Contact({ contact }: { contact: SiteSettings["contact"] }) {
                       required
                       autoComplete="name"
                       disabled={pending}
-                      className="mt-2 w-full rounded-2xl border border-white/10 bg-black/25 px-4 py-3.5 text-sm text-foreground outline-none ring-0 transition placeholder:text-muted/60 focus:border-accent-mint/50 disabled:opacity-50"
+                      className="mt-2 w-full rounded-2xl border border-slate-300/45 bg-white/90 px-4 py-3.5 text-sm text-foreground outline-none ring-0 transition placeholder:text-muted/60 focus:border-accent-mint/50 disabled:opacity-50"
                       placeholder="Your name"
                     />
                   </div>
@@ -154,7 +154,7 @@ export function Contact({ contact }: { contact: SiteSettings["contact"] }) {
                         type="tel"
                         autoComplete="tel"
                         disabled={pending}
-                        className="mt-2 w-full rounded-2xl border border-white/10 bg-black/25 px-4 py-3.5 text-sm text-foreground outline-none transition placeholder:text-muted/60 focus:border-accent-mint/50 disabled:opacity-50"
+                        className="mt-2 w-full rounded-2xl border border-slate-300/45 bg-white/90 px-4 py-3.5 text-sm text-foreground outline-none transition placeholder:text-muted/60 focus:border-accent-mint/50 disabled:opacity-50"
                         placeholder="+233..."
                       />
                     </div>
@@ -171,7 +171,7 @@ export function Contact({ contact }: { contact: SiteSettings["contact"] }) {
                         type="text"
                         autoComplete="organization"
                         disabled={pending}
-                        className="mt-2 w-full rounded-2xl border border-white/10 bg-black/25 px-4 py-3.5 text-sm text-foreground outline-none transition placeholder:text-muted/60 focus:border-accent-mint/50 disabled:opacity-50"
+                        className="mt-2 w-full rounded-2xl border border-slate-300/45 bg-white/90 px-4 py-3.5 text-sm text-foreground outline-none transition placeholder:text-muted/60 focus:border-accent-mint/50 disabled:opacity-50"
                         placeholder="Your business name"
                       />
                     </div>
@@ -190,7 +190,7 @@ export function Contact({ contact }: { contact: SiteSettings["contact"] }) {
                       required
                       autoComplete="email"
                       disabled={pending}
-                      className="mt-2 w-full rounded-2xl border border-white/10 bg-black/25 px-4 py-3.5 text-sm text-foreground outline-none transition placeholder:text-muted/60 focus:border-accent-mint/50 disabled:opacity-50"
+                      className="mt-2 w-full rounded-2xl border border-slate-300/45 bg-white/90 px-4 py-3.5 text-sm text-foreground outline-none transition placeholder:text-muted/60 focus:border-accent-mint/50 disabled:opacity-50"
                       placeholder="you@company.com"
                     />
                   </div>
@@ -207,7 +207,7 @@ export function Contact({ contact }: { contact: SiteSettings["contact"] }) {
                       required
                       rows={4}
                       disabled={pending}
-                      className="mt-2 w-full resize-y rounded-2xl border border-white/10 bg-black/25 px-4 py-3.5 text-sm text-foreground outline-none transition placeholder:text-muted/60 focus:border-accent-mint/50 disabled:opacity-50"
+                      className="mt-2 w-full resize-y rounded-2xl border border-slate-300/45 bg-white/90 px-4 py-3.5 text-sm text-foreground outline-none transition placeholder:text-muted/60 focus:border-accent-mint/50 disabled:opacity-50"
                       placeholder="Goals, timeline, links, and anything we should know."
                     />
                   </div>

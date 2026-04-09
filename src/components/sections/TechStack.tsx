@@ -9,7 +9,7 @@ export function TechStack() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="section-shell section-divider py-18 sm:py-22 lg:py-28">
+    <section className="section-shell section-divider py-14 sm:py-18 lg:py-22">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           align="center"

@@ -1,25 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #060816;
-  --foreground: #f8fbff;
-  --muted: #98a8c2;
-  --surface: rgba(9, 14, 30, 0.72);
-  --surface-soft: rgba(255, 255, 255, 0.05);
-  --card-light: #f6f8fc;
-  --card-light-foreground: #0c1224;
-  --border-glass: rgba(159, 176, 200, 0.14);
-  --accent-mint: #2dd4bf;
-  --accent-azure: #3b82f6;
-  --accent-sky: #38bdf8;
-  --accent-cyan: #22d3ee;
-  --accent-indigo: #6366f1;
-  --accent-violet: #8b5cf6;
-  --accent-green: #22c55e;
-  --glow-mint: rgba(34, 197, 94, 0.14);
-  --glow-azure: rgba(56, 189, 248, 0.14);
-  --glow-violet: rgba(139, 92, 246, 0.16);
-  --section-light: linear-gradient(180deg, #ffffff 0%, #f3f7ff 100%);
+  --background: #f2f6fb;
+  --foreground: #132640;
+  --muted: #647a96;
+  --surface: rgba(255, 255, 255, 0.84);
+  --surface-soft: rgba(255, 255, 255, 0.8);
+  --card-light: #fbfdff;
+  --card-light-foreground: #10213b;
+  --border-glass: rgba(120, 148, 184, 0.24);
+  --accent-mint: #4f86be;
+  --accent-azure: #3c78bf;
+  --accent-sky: #5f95d0;
+  --accent-cyan: #4b83ba;
+  --accent-indigo: #4877ad;
+  --accent-violet: #4877ad;
+  --accent-green: #4b8ab2;
+  --glow-mint: rgba(79, 134, 190, 0.09);
+  --glow-azure: rgba(60, 120, 191, 0.1);
+  --glow-violet: rgba(72, 119, 173, 0.08);
+  --section-light: linear-gradient(180deg, #fcfeff 0%, #f1f6fc 100%);
 }
 
 @theme inline {
@@ -56,9 +56,9 @@
 
   body {
     background:
-      radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 26%),
-      radial-gradient(circle at top right, rgba(139, 92, 246, 0.1), transparent 26%),
-      linear-gradient(180deg, #060816 0%, #070b1b 48%, #050712 100%);
+      radial-gradient(circle at top left, rgba(93, 149, 212, 0.08), transparent 36%),
+      radial-gradient(circle at top right, rgba(60, 120, 191, 0.06), transparent 38%),
+      linear-gradient(180deg, #f8fbff 0%, #f2f6fb 52%, #ecf2f9 100%);
     color: var(--foreground);
     font-family: var(--font-instrument-sans), system-ui, sans-serif;
   }
@@ -82,8 +82,8 @@
   .glass-panel {
     background: linear-gradient(
       145deg,
-      rgba(11, 18, 37, 0.8),
-      rgba(11, 18, 37, 0.58)
+      rgba(255, 255, 255, 0.9),
+      rgba(249, 252, 255, 0.8)
     );
     border: 1px solid var(--border-glass);
     backdrop-filter: blur(20px);
@@ -98,10 +98,10 @@
   }
 
   .premium-border {
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(149, 176, 206, 0.28);
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.05),
-      0 20px 60px -46px rgba(59, 130, 246, 0.16);
+      inset 0 1px 0 rgba(255, 255, 255, 0.78),
+      0 20px 60px -46px rgba(60, 120, 191, 0.12);
   }
 
   .section-divider {
@@ -119,7 +119,7 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(255, 255, 255, 0.2),
+      rgba(120, 148, 184, 0.34),
       transparent
     );
   }
@@ -134,8 +134,8 @@
     inset: 0;
     pointer-events: none;
     background:
-      radial-gradient(circle at 15% 20%, rgba(34, 211, 238, 0.05), transparent 16%),
-      radial-gradient(circle at 80% 10%, rgba(139, 92, 246, 0.05), transparent 18%);
+      radial-gradient(circle at 15% 20%, rgba(93, 149, 212, 0.04), transparent 20%),
+      radial-gradient(circle at 80% 10%, rgba(60, 120, 191, 0.035), transparent 22%);
   }
 
   .bg-grid-fine {
@@ -149,6 +149,6 @@
 
   /* Project thumbnails & gallery: full image visible, letterbox if aspect differs */
   .portfolio-image-slot {
-    background-color: #050812;
+    background-color: #e8eff8;
   }
 }

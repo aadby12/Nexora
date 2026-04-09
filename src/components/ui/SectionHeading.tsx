@@ -22,9 +22,9 @@ export function SectionHeading({
     <div className={cn("max-w-2xl space-y-4.5", alignCls, className)}>
       {eyebrow ? (
         <Reveal>
-          <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent-cyan" />
-            <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-accent-cyan">
+          <div className="inline-flex items-center gap-3 rounded-full border border-slate-300/45 bg-white/78 px-3.5 py-1.5">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent-azure" />
+            <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-accent-azure">
               {eyebrow}
             </p>
           </div>

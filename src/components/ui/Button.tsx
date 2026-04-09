@@ -20,11 +20,11 @@ export type ButtonProps = Omit<HTMLMotionProps<"button">, "children"> & {
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "relative overflow-hidden bg-[linear-gradient(135deg,#22c7b7_0%,#2787ef_58%,#5b63f3_100%)] text-white shadow-[0_18px_48px_-24px_rgba(39,135,239,0.42)] " +
-    "before:absolute before:inset-0 before:bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0))] before:opacity-0 before:transition-opacity hover:before:opacity-100",
+    "relative overflow-hidden bg-[linear-gradient(135deg,#356fae_0%,#4a89c4_100%)] text-white shadow-[0_18px_48px_-24px_rgba(60,120,191,0.3)] " +
+    "before:absolute before:inset-0 before:bg-[linear-gradient(135deg,rgba(255,255,255,0.16),rgba(255,255,255,0))] before:opacity-0 before:transition-opacity hover:before:opacity-100",
   secondary:
-    "glass-panel premium-border text-foreground ring-1 ring-white/10 hover:ring-white/16 hover:bg-white/[0.06]",
-  ghost: "text-muted hover:text-foreground hover:bg-white/[0.04] hover:shadow-[0_14px_30px_-26px_rgba(56,189,248,0.28)]",
+    "glass-panel premium-border text-foreground ring-1 ring-slate-300/45 hover:ring-slate-300/70 hover:bg-white/85",
+  ghost: "text-muted hover:text-foreground hover:bg-white/75 hover:shadow-[0_14px_30px_-26px_rgba(61,134,207,0.2)]",
 };
 
 export function Button({

@@ -17,7 +17,7 @@ export function WhyChooseUs({
   return (
     <section
       id="why-us"
-      className="section-shell section-divider relative scroll-mt-28 overflow-hidden py-22 sm:scroll-mt-32 sm:py-26 lg:py-32"
+      className="section-shell section-divider relative scroll-mt-24 overflow-hidden py-16 sm:scroll-mt-28 sm:py-20 lg:py-24"
     >
       <div
         aria-hidden

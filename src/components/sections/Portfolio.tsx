@@ -18,7 +18,7 @@ export function Portfolio({ projects }: { projects: Project[] }) {
   return (
     <section
       id="work"
-      className="section-shell section-divider scroll-mt-28 py-22 sm:scroll-mt-32 sm:py-26 lg:py-32"
+      className="section-shell section-divider scroll-mt-24 py-16 sm:scroll-mt-28 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
@@ -37,10 +37,10 @@ export function Portfolio({ projects }: { projects: Project[] }) {
         </div>
 
         <Reveal className="mt-14" delay={0.06}>
-          <div className="premium-border relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(99,102,241,0.12),transparent_32%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02))]">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.1),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(139,92,246,0.1),transparent_28%)]" />
+          <div className="premium-border relative overflow-hidden rounded-[2rem] border border-slate-300/45 bg-[linear-gradient(135deg,rgba(45,111,196,0.1),transparent_36%),linear-gradient(180deg,rgba(255,255,255,0.86),rgba(255,255,255,0.72))]">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(64,146,221,0.08),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(31,159,143,0.07),transparent_34%)]" />
             <div className="grid gap-0 lg:grid-cols-2">
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#050812] sm:aspect-video lg:min-h-[min(52vh,520px)]">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e8eff8] sm:aspect-video lg:h-full lg:aspect-auto lg:min-h-[420px]">
                 <Image
                   src={featured.thumbnail_image}
                   alt={featured.thumbnail_alt}
@@ -49,10 +49,10 @@ export function Portfolio({ projects }: { projects: Project[] }) {
                   sizes="(max-width:1024px) 100vw, 50vw"
                   priority
                 />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-transparent lg:from-black/30" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-slate-900/12 via-transparent to-transparent lg:from-slate-900/18" />
               </div>
               <div className="relative flex flex-col justify-center p-8 sm:p-10 lg:p-14">
-                <span className="inline-flex w-fit rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-accent-cyan">
+                <span className="inline-flex w-fit rounded-full border border-slate-300/45 bg-white/82 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-accent-cyan">
                   Featured case study
                 </span>
                 <h3 className="mt-5 font-display text-[2rem] font-medium leading-[1.02] tracking-[-0.04em] text-foreground sm:text-[2.6rem]">
@@ -68,7 +68,7 @@ export function Portfolio({ projects }: { projects: Project[] }) {
                   {featured.tech_stack.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full border border-white/10 bg-white/[0.05] px-3.5 py-1.5 text-xs text-muted"
+                      className="rounded-full border border-slate-300/45 bg-white/82 px-3.5 py-1.5 text-xs text-muted"
                     >
                       {t}
                     </span>

@@ -4,7 +4,7 @@ import { navItems, socialLinks } from "@/lib/data";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#040714]">
+    <footer className="border-t border-slate-300/45 bg-[#e7eef7]">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-md space-y-5">
@@ -77,7 +77,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-muted sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-4 border-t border-slate-300/45 pt-8 text-xs text-muted sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Avenor Tech. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <Link
@@ -86,7 +86,7 @@ export function Footer() {
             >
               Privacy
             </Link>
-            <span className="hidden text-white/20 sm:inline" aria-hidden>
+            <span className="hidden text-slate-400 sm:inline" aria-hidden>
               ·
             </span>
             <p className="text-balance sm:text-right">

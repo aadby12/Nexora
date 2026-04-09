@@ -13,7 +13,7 @@ export function Services({ services }: { services: Service[] }) {
   return (
     <section
       id="services"
-      className="section-shell section-divider scroll-mt-28 py-22 sm:scroll-mt-32 sm:py-26 lg:py-32"
+      className="section-shell section-divider scroll-mt-24 py-16 sm:scroll-mt-28 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
@@ -40,7 +40,7 @@ export function Services({ services }: { services: Service[] }) {
               >
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-accent-violet/10 blur-3xl transition group-hover:bg-accent-cyan/10"
+                  className="pointer-events-none absolute -right-16 -top-16 h-36 w-36 rounded-full bg-accent-azure/10 blur-3xl transition group-hover:bg-accent-cyan/10"
                 />
                 <div className="mb-5 flex h-13 w-13 items-center justify-center rounded-[1.1rem] border border-white/10 bg-white/[0.05]">
                   <ServiceIcon name={service.icon} />

@@ -10,7 +10,7 @@ export function CtaBanner() {
     <section className="py-8 sm:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="premium-border relative overflow-hidden rounded-[1.9rem] border border-white/10 bg-[linear-gradient(135deg,rgba(99,102,241,0.18),rgba(6,8,22,0.92)_38%,rgba(34,211,238,0.12))] px-6 py-12 sm:px-10 sm:py-14"
+          className="premium-border relative overflow-hidden rounded-[1.9rem] border border-slate-300/45 bg-[linear-gradient(135deg,rgba(45,111,196,0.14),rgba(255,255,255,0.92)_40%,rgba(31,159,143,0.12))] px-6 py-12 sm:px-10 sm:py-14"
           initial={reduce ? false : { opacity: 0, y: 20 }}
           whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-12%" }}
@@ -26,7 +26,7 @@ export function CtaBanner() {
           />
           <div
             aria-hidden
-            className="absolute -right-10 top-8 h-40 w-40 rounded-full bg-accent-violet/10 blur-3xl"
+            className="absolute -right-10 top-8 h-40 w-40 rounded-full bg-accent-azure/10 blur-3xl"
           />
           <div className="relative flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div>

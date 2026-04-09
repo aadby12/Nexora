@@ -6,7 +6,7 @@ export function About({ about }: { about: SiteSettings["about"] }) {
   return (
     <section
       id="about"
-      className="section-shell section-divider scroll-mt-28 py-22 sm:scroll-mt-32 sm:py-26 lg:py-32"
+      className="section-shell section-divider scroll-mt-24 py-16 sm:scroll-mt-28 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-18 lg:items-start">

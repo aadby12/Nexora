@@ -1,20 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Sans, Space_Grotesk } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
-import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { getSiteUrl } from "@/lib/site";
 import { Analytics } from "@vercel/analytics/react";
 import { StructuredData } from "@/components/seo/StructuredData";
 import "./globals.css";
 
-const instrumentSans = Instrument_Sans({
+const inter = Inter({
   variable: "--font-instrument-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const manrope = Manrope({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
   display: "swap",
@@ -75,11 +74,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${instrumentSans.variable} ${spaceGrotesk.variable} h-full scroll-smooth antialiased`}
+      className={`${inter.variable} ${manrope.variable} h-full scroll-smooth antialiased`}
       data-scroll-behavior="smooth"
     >
       <body className="min-h-full bg-background font-sans text-foreground">
-        <ScrollProgress />
         <Navbar />
         <StructuredData />
         {children}

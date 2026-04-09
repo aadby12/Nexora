@@ -129,81 +129,81 @@ export const services: Service[] = [
     id: "service-custom-web",
     title: "Custom Website Development",
     description:
-      "Websites shaped around your offer, your audience, and the way your business actually closes work.",
+      "Websites built around your business goals, audience, and offer.",
     icon: "code",
-    cta: "Tailored builds, not recycled templates",
+    cta: "Built for your business, not a template",
     sort_order: 1,
   },
   {
     id: "service-responsive",
     title: "Responsive Mobile-First Design",
     description:
-      "Layouts planned from the phone screen upward so the experience feels composed everywhere else.",
+      "Designed for mobile first, then polished for every screen size.",
     icon: "layout",
-    cta: "Clean on mobile, calm on desktop",
+    cta: "Smooth on mobile and desktop",
     sort_order: 2,
   },
   {
     id: "service-business",
     title: "Business Websites",
     description:
-      "Professional brochure and service sites that help visitors understand who you are and why they should trust you.",
+      "Professional websites that explain your value clearly and build trust.",
     icon: "building",
-    cta: "Built to support sales conversations",
+    cta: "Made to support real enquiries",
     sort_order: 3,
   },
   {
     id: "service-ecommerce",
     title: "E-commerce Websites",
     description:
-      "Online stores with stronger product presentation, faster browsing, and a clearer route to checkout.",
+      "Online stores with better product pages, simple browsing, and clear checkout.",
     icon: "cart",
-    cta: "Focused on product clarity and conversion",
+    cta: "Focused on better conversion",
     sort_order: 4,
   },
   {
     id: "service-referral",
     title: "Referral System Development",
     description:
-      "Referral flows and supporting tools that make it easier for happy customers to bring in more business.",
+      "Referral systems that help happy clients bring in more leads.",
     icon: "rocket",
-    cta: "Turn word of mouth into a system",
+    cta: "Turn referrals into a repeatable channel",
     sort_order: 5,
   },
   {
     id: "service-seo",
     title: "SEO Optimization",
     description:
-      "Technical cleanup, structure, and on-page improvements that give search engines something solid to work with.",
+      "Technical and on-page improvements that help your site rank better.",
     icon: "gauge",
-    cta: "Better foundations for long-term visibility",
+    cta: "Stronger SEO foundation",
     sort_order: 6,
   },
   {
     id: "service-uiux",
     title: "UI/UX Design",
     description:
-      "Interface design that makes your business feel established, easy to trust, and easy to navigate.",
+      "Clean interfaces that feel credible and easy to use.",
     icon: "palette",
-    cta: "Less friction, more confidence",
+    cta: "Clear journeys, less friction",
     sort_order: 7,
   },
   {
     id: "service-marketing",
     title: "Digital Marketing",
     description:
-      "Campaign pages and supporting digital touchpoints built to make your marketing spend work harder.",
+      "Campaign pages and digital assets designed to improve results.",
     icon: "refresh",
-    cta: "Sharper landing pages for paid traffic",
+    cta: "Landing pages that convert better",
     sort_order: 8,
   },
   {
     id: "service-branding",
     title: "Branding & Identity",
     description:
-      "Brand direction for businesses that need their online presence to feel considered, consistent, and credible.",
+      "Brand direction that keeps your online presence consistent and professional.",
     icon: "wrench",
-    cta: "Make the brand feel cohesive online",
+    cta: "Make your brand feel consistent online",
     sort_order: 9,
   },
 ];
@@ -406,9 +406,14 @@ export const stats = [
 
 export const socialLinks = [
   { label: "LinkedIn", href: "https://linkedin.com" },
-  { label: "Instagram", href: "https://instagram.com" },
-  { label: "X", href: "https://x.com" },
-  { label: "Behance", href: "https://behance.net" },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/avenor.tech?igsh=b2JycnBwaGxzemE0&utm_source=qr",
+  },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@avenortech?_r=1&_t=ZS-95LGp9GpsPP",
+  },
 ] as const;
 
 export const siteSettings: SiteSettings = {
@@ -417,7 +422,7 @@ export const siteSettings: SiteSettings = {
     title: "Websites that make your business feel established",
     highlightedText: "before a call even happens",
     description:
-      "Avenor Tech designs and builds business websites that feel clear, credible, and modern. The focus is simple: help you look more trusted online and make it easier for the right clients to reach out.",
+      "We design and build business websites that look clean, feel credible, and help the right clients reach out.",
     primaryCtaLabel: "Start Your Project",
     primaryCtaHref: "/#contact",
     secondaryCtaLabel: "View Portfolio",
@@ -425,12 +430,12 @@ export const siteSettings: SiteSettings = {
   },
   about: {
     eyebrow: "About Avenor Tech",
-    title: "Avenor Tech helps businesses present themselves better online.",
+    title: "Avenor Tech helps businesses look better online.",
     description:
-      "The focus is simple: clearer communication, stronger presentation, and a website that feels more aligned with the quality of the business.",
+      "Clear communication, stronger presentation, and websites that match the quality of the business.",
     body: [
-      "Some businesses already do good work, but their websites do not reflect that yet. Avenor Tech closes that gap with cleaner structure, stronger messaging hierarchy, and a more considered visual standard.",
-      "From layout and mobile experience to performance and content management, the goal is to make the website easier to trust, easier to use, and easier to maintain.",
+      "Many businesses do great work, but their websites do not show it well. We close that gap with cleaner structure and clearer messaging.",
+      "From layout and mobile experience to performance and content updates, we make sites easier to trust, use, and manage.",
     ],
     spotlightTitle: "Clearer websites. Better first impressions.",
     spotlightBody:
@@ -460,6 +465,6 @@ export const siteSettings: SiteSettings = {
     email: "info@avenortech12.com",
     heading: "If the website no longer reflects the business, let’s fix that.",
     body:
-      "Share a little about the business, the current website, and what needs to improve. We’ll come back with the right next step, not a generic sales reply.",
+      "Tell us what you need to improve and we will come back with the best next step.",
   },
 };

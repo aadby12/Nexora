@@ -45,7 +45,7 @@ export function GlowBackground() {
         }}
       />
       <motion.div
-        className="absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-accent-violet/20 blur-[90px]"
+        className="absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-accent-azure/16 blur-[90px]"
         animate={
           reduce
             ? undefined

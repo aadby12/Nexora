@@ -11,7 +11,7 @@ export function FAQ() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="faq" className="section-shell section-divider scroll-mt-28 py-22 sm:scroll-mt-32 sm:py-26 lg:py-32">
+    <section id="faq" className="section-shell section-divider scroll-mt-24 py-16 sm:scroll-mt-28 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           align="center"
